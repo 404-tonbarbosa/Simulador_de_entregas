@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Entregas - Correios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-shipping-fast logo-icon"></i>
+                <div>
+                    <div class="logo-text">SIMULADOR DE ENTREGAS</div>
+                    <div class="subtitle">Sistema FIFO - Correios</div>
+                </div>
+            </div>
+            <div class="header-info">
+                <i class="fas fa-map-marker-alt"></i> <span id="userLocation">Detectando localização...</span>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="panel">
+                <div class="panel-header">
+                    <i class="fas fa-tasks panel-icon"></i>
+                    <h2 class="panel-title">Controle de Entregas</h2>
+                </div>
+                
+                <div class="controls">
+                    <button class="btn btn-primary" id="addPackage">
+                        <i class="fas fa-plus-circle"></i> Adicionar Pacote à Fila
+                    </button>
+                    <button class="btn btn-success" id="deliverPackage" disabled>
+                        <i class="fas fa-truck-loading"></i> Realizar Entrega
+                    </button>
+                    <button class="btn btn-warning" id="clearQueue" disabled>
+                        <i class="fas fa-broom"></i> Limpar Fila
+                    </button>
+                    <button class="btn btn-danger" id="clearHistory">
+                        <i class="fas fa-history"></i> Limpar Histórico
+                    </button>
+                </div>
+
+                <div class="status-message" id="statusMessage">
+                    <i class="fas fa-info-circle"></i> Clique em "Adicionar Pacote" para começar!
+                </div>
+
+                <div class="map-container">
+                    <div class="map" id="map">
+                        <!-- Mapa será gerado dinamicamente -->
+                    </div>
+                    <div class="map-legend">
+                        <div class="legend-item">
+                            <div class="legend-color depot"></div>
+                            <span>Centro de Distribuição</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color delivery"></div>
+                            <span>Ponto de Entrega</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color route"></div>
+                            <span>Rota de Entrega</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="queueCount">0</div>
+                        <div class="stat-label">Na Fila</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="deliveredCount">0</div>
+                        <div class="stat-label">Entregues</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalCount">0</div>
+                        <div class="stat-label">Total</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <i class="fas fa-clipboard-list panel-icon"></i>
+                    <h2 class="panel-title">Fila de Entregas</h2>
+                </div>
+                <div class="queue-container" id="queueContainer">
+                    <div class="queue-empty">
+                        <i class="fas fa-box-open fa-2x" style="margin-bottom: 10px; color: #ccc;"></i>
+                        <p>A fila de entregas está vazia</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <i class="fas fa-history panel-icon"></i>
+                    <h2 class="panel-title">Histórico de Entregas</h2>
+                </div>
+                <div class="history-list" id="historyList">
+                    <div class="history-empty">
+                        <i class="fas fa-clipboard-check fa-2x" style="margin-bottom: 10px; color: #ccc;"></i>
+                        <p>Nenhuma entrega realizada ainda</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Simulador de Entregas - Correios | Desenvolvido para demonstração de estrutura de dados FIFO</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
