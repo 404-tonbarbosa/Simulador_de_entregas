@@ -11,7 +11,7 @@ Simulador de sistema de entregas utilizando estrutura de dados FIFO (First In, F
 - ✅ Design responsivo
 
 ## 🚀 Como Usar
-1. Acesse: [https://SEU-USUARIO.github.io/simulador-entregas](https://SEU-USUARIO.github.io/simulador-entregas)
+1. Acesse: [https://404-tonbarbosa.github.io/Simulador_de_entregas](https://404-tonbarbosa.github.io/Simulador_de_entregas)
 2. Clique em "Adicionar Pacote" para gerar destinatários
 3. Clique em "Realizar Entrega" para processar a fila
 
